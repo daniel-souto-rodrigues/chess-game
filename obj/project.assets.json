@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Daniel\\Desenvolvimento\\chess-game\\chess-game\\chess-game.csproj",
+      "projectUniqueName": "A:\\Daniel\\Desenvolvimento\\chess-game\\chess-game.csproj",
       "projectName": "chess-game",
-      "projectPath": "A:\\Daniel\\Desenvolvimento\\chess-game\\chess-game\\chess-game.csproj",
+      "projectPath": "A:\\Daniel\\Desenvolvimento\\chess-game\\chess-game.csproj",
       "packagesPath": "C:\\Users\\DanCarthi\\.nuget\\packages\\",
-      "outputPath": "A:\\Daniel\\Desenvolvimento\\chess-game\\chess-game\\obj\\",
+      "outputPath": "A:\\Daniel\\Desenvolvimento\\chess-game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DanCarthi\\AppData\\Roaming\\NuGet\\NuGet.Config",
