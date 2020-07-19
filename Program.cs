@@ -18,10 +18,7 @@ namespace chess_game
                 try
                 {
                     Console.Clear();
-                    Screen.BoardPrint(match.Board);
-                    Console.WriteLine();
-                    Console.WriteLine("Shift: " + match.Shift);
-                    Console.WriteLine("Current Player: " + match.CurrentPlayer);
+                    Screen.MatchPrint(match);
 
                     Console.WriteLine();
                     Console.Write("Origin: ");

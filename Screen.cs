@@ -2,11 +2,44 @@
 using chess;
 using chess_game.board;
 using System;
+using System.Collections.Generic;
 
 namespace chess_game
 {
     class Screen
     {
+        public static void MatchPrint(ChessMatch match)
+        {
+            BoardPrint(match.Board);
+            Console.WriteLine();
+            PrintCapturedPieces(match);
+            Console.WriteLine();
+            Console.WriteLine("Shift: " + match.Shift);
+            Console.WriteLine("Current Player: " + match.CurrentPlayer);
+        }
+
+        private static void PrintCapturedPieces(ChessMatch match)
+        {
+            Console.WriteLine("Captured Pieces:");
+            Console.Write("White: ");
+            HashSetPrint(match.CapturedPieces(Color.white));
+            Console.Write("Black: ");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            HashSetPrint(match.CapturedPieces(Color.black));
+            Console.ForegroundColor = aux;
+        }
+
+        private static void HashSetPrint(HashSet<Piece> _hashSets)
+        {
+            Console.Write("[");
+            foreach(Piece x in _hashSets)
+            {
+                Console.Write(x + " ");
+            }
+            Console.WriteLine("]");
+        }
+
         public static void BoardPrint(Board board)
         {
            
