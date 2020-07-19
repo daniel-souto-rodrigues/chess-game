@@ -42,6 +42,8 @@ namespace chess_game
                     Console.WriteLine(e.Message);
                     Console.ReadLine();
                 }
+                Console.Clear();
+                Screen.MatchPrint(match);
             }
         }
     }
