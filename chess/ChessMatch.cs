@@ -16,7 +16,7 @@ namespace chess
         public bool Check { get; private set; }
         public Piece VulnerableEnPassant { get; private set; }
 
-    public ChessMatch()
+        public ChessMatch()
         {
             Board = new Board(8, 8);
             Shift = 1;
@@ -105,7 +105,7 @@ namespace chess
                 T.MovementDecrement();
                 Board.addPiece(T, originT);
             }
-            
+
             //#EspecialPlay en passant
             if (p is Peasant)
             {
@@ -113,7 +113,7 @@ namespace chess
                 {
                     Piece peasant = Board.RemovePiece(destiny);
                     Position posP;
-                    if(p.Color == Color.white)
+                    if (p.Color == Color.white)
                         posP = new Position(3, destiny.Column);
                     else
                         posP = new Position(4, destiny.Column);
@@ -132,6 +132,21 @@ namespace chess
                 throw new BoardException("You cannot put yourself in a check!");
             }
 
+            Piece p = Board.Piece(destiny);
+
+            //#EspecialPlay promotion
+            if (p is Peasant)
+            {
+                if ((p.Color == Color.white && destiny.Line == 0) || (p.Color == Color.black && destiny.Line == 7))
+                {
+                    p = Board.RemovePiece(destiny);
+                    Pieces.Remove(p);
+                    Piece queen = new Queen(Board, p.Color);
+                    Pieces.Add(queen);
+                }
+            }
+
+
             if (IsInCheck(Adversary(CurrentPlayer)))
                 Check = true;
             else
@@ -145,8 +160,8 @@ namespace chess
                 ChangePlayer();
             }
 
-            Piece p = Board.Piece(destiny);
-            
+            p = Board.Piece(destiny);
+
             //#EspecialPlay en passant
             if (p is Peasant && (destiny.Line == origin.Line - 2 || destiny.Line == origin.Line + 2))
                 VulnerableEnPassant = p;
