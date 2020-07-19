@@ -10,15 +10,34 @@ namespace chess_game
         {
             for (int i = 0; i < board.Lines; i++)
             {
+                Console.Write(8 - i + " ");
                 for (int j = 0; j < board.Columns; j++)
                 {
                     if (board.Piece(i, j) == null)
                         Console.Write("- ");
                     else
-                        Console.Write(board.Piece(i, j) + " ");
+                    {
+                        PiecePrint(board.Piece(i, j));
+                        Console.Write(" ");
+                    }
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("  A B C D E F G H");
         }
+
+        public static void PiecePrint(Piece piece)
+        {
+            if (piece.Color == Color.white)
+                Console.Write(piece);
+            else
+            {
+                ConsoleColor aux = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(piece);
+                Console.ForegroundColor = aux;
+            }
+        }
+
     }
 }
