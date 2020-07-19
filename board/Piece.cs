@@ -21,6 +21,10 @@ namespace chess_game.board
         {
             MoveQuantity++;
         }
+        public void MovementDecrement()
+        {
+            MoveQuantity--;
+        }
 
         public bool ExistPossibleMoviments()
         {

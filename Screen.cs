@@ -16,6 +16,8 @@ namespace chess_game
             Console.WriteLine();
             Console.WriteLine("Shift: " + match.Shift);
             Console.WriteLine("Current Player: " + match.CurrentPlayer);
+            if (match.Check)
+                Console.WriteLine("CHECK!");
         }
 
         private static void PrintCapturedPieces(ChessMatch match)
