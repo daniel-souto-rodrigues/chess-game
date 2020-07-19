@@ -2,7 +2,6 @@
 using chess;
 using chess_game.board;
 using System;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace chess_game
 {
@@ -10,6 +9,7 @@ namespace chess_game
     {
         public static void BoardPrint(Board board)
         {
+           
             for (int i = 0; i < board.Lines; i++)
             {
                 Console.Write(8 - i + " ");

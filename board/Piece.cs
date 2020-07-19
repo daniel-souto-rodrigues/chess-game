@@ -22,6 +22,25 @@ namespace chess_game.board
             MoveQuantity++;
         }
 
+        public bool ExistPossibleMoviments()
+        {
+            bool[,] mat = PossibleMoviments();
+            for(int i = 0; i< Board.Lines; i++)
+            {
+                for(int j = 0; j < Board.Columns; j++)
+                {
+                    if (mat[i, j])
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        public bool CanMoveToPosition(Position pos)
+        {
+            return PossibleMoviments()[pos.Line, pos.Column];
+        }
+
         public abstract bool[,] PossibleMoviments();
 
     }
