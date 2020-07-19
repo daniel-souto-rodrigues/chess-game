@@ -1,6 +1,8 @@
 ﻿using board;
+using chess;
 using chess_game.board;
 using System;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace chess_game
 {
@@ -24,6 +26,14 @@ namespace chess_game
                 Console.WriteLine();
             }
             Console.WriteLine("  A B C D E F G H");
+        }
+
+        public static ChessPosition ChessPositionRead()
+        {
+            string s = Console.ReadLine();
+            char column = s[0];
+            int line = int.Parse(s[1] + "");
+            return new ChessPosition(column, line);
         }
 
         public static void PiecePrint(Piece piece)

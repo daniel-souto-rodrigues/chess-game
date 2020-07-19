@@ -1,4 +1,5 @@
 ﻿using chess_game.board;
+using System.Globalization;
 
 namespace board
 {
@@ -37,6 +38,16 @@ namespace board
                 throw new BoardException("Already exist a piece on this position!");
             pieces[pos.Line, pos.Column] = p;
             p.Position = pos;
+        }
+
+        public Piece RemovePiece(Position pos)
+        {
+            if (Piece(pos) == null)
+                return null;
+            Piece aux = Piece(pos);
+            aux.Position = null;
+            pieces[pos.Line, pos.Column] = null;
+            return aux;
         }
 
         public bool validPositionTest(Position pos)

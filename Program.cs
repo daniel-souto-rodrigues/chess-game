@@ -10,18 +10,22 @@ namespace chess_game
         {
             try
             {
-                Board board = new Board(8, 8);
+                ChessMatch match = new ChessMatch();
+               
 
-                board.addPiece(new Tower(board, Color.black), new Position(0, 0));
-                board.addPiece(new Tower(board, Color.black), new Position(1, 3));
-                board.addPiece(new King(board, Color.black), new Position(2, 4));
-                board.addPiece(new King(board, Color.black), new Position(0, 5));
-                //test
-                board.addPiece(new King(board, Color.white), new Position(6, 6));
+                while (!match.Finished)
+                {
+                    Console.Clear();
+                    Screen.BoardPrint(match.Board);
 
-                Screen.BoardPrint(board);
+                    Console.WriteLine();
+                    Console.Write("Origin: ");
+                    Position origin = Screen.ChessPositionRead().ToPosition();
+                    Console.Write("Destiny: ");
+                    Position destiny = Screen.ChessPositionRead().ToPosition();
 
-
+                    match.MovementExecute(origin, destiny);
+                }                
             }
             catch (BoardException e)
             {

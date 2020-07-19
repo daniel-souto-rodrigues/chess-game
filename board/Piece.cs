@@ -17,6 +17,11 @@ namespace chess_game.board
             MoveQuantity = 0;
         }
 
+        public void MovementIncrement()
+        {
+            MoveQuantity++;
+        }
+
 
     }
 }
