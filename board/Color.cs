@@ -1,4 +1,4 @@
-﻿namespace chess_game.board
+﻿namespace board
 {
     enum Color
     {
