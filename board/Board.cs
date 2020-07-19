@@ -14,5 +14,10 @@ namespace board
             Columns = columns;
             pieces = new Piece[lines, columns];
         }
+
+        public Piece Piece(int line, int column)
+        {
+            return pieces[line, column];
+        }
     }
 }
