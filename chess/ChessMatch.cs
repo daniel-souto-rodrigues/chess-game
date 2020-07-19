@@ -1,8 +1,6 @@
 ﻿using board;
 using chess_game.board;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace chess
 {
@@ -198,19 +196,39 @@ namespace chess
 
         private void PiecesDistribution()
         {
-            PlaceNewPiece('c', 1, new Tower(Board, Color.white));
-            PlaceNewPiece('d', 1, new King(Board, Color.white));
-            PlaceNewPiece('h', 7, new Tower(Board, Color.white));
+            PlaceNewPiece('a', 1, new Tower(Board, Color.white));
+            PlaceNewPiece('b', 1, new Horse(Board, Color.white));
+            PlaceNewPiece('c', 1, new Bisp(Board, Color.white));
+            PlaceNewPiece('d', 1, new Queen(Board, Color.white));
+            PlaceNewPiece('e', 1, new King(Board, Color.white));
+            PlaceNewPiece('f', 1, new Bisp(Board, Color.white));
+            PlaceNewPiece('g', 1, new Horse(Board, Color.white));
+            PlaceNewPiece('h', 1, new Tower(Board, Color.white));
+            PlaceNewPiece('a', 2, new Peasant(Board, Color.white));
+            PlaceNewPiece('b', 2, new Peasant(Board, Color.white));
+            PlaceNewPiece('c', 2, new Peasant(Board, Color.white));
+            PlaceNewPiece('d', 2, new Peasant(Board, Color.white));
+            PlaceNewPiece('e', 2, new Peasant(Board, Color.white));
+            PlaceNewPiece('f', 2, new Peasant(Board, Color.white));
+            PlaceNewPiece('g', 2, new Peasant(Board, Color.white));
+            PlaceNewPiece('h', 2, new Peasant(Board, Color.white));
 
-            PlaceNewPiece('a', 8, new King(Board, Color.black));
-            PlaceNewPiece('b', 8, new Tower(Board, Color.black));
-            
-            //PlaceNewPiece('c', 7, new Tower(Board, Color.black));
-            //PlaceNewPiece('c', 8, new Tower(Board, Color.black));
-            //PlaceNewPiece('d', 7, new Tower(Board, Color.black));
-            //PlaceNewPiece('e', 8, new Tower(Board, Color.black));
-            //PlaceNewPiece('e', 7, new Tower(Board, Color.black));
-            //PlaceNewPiece('d', 8, new King(Board, Color.black));
+            PlaceNewPiece('a', 8, new Tower(Board, Color.black));
+            PlaceNewPiece('b', 8, new Horse(Board, Color.black));
+            PlaceNewPiece('c', 8, new Bisp(Board, Color.black));
+            PlaceNewPiece('d', 8, new Queen(Board, Color.black));
+            PlaceNewPiece('e', 8, new King(Board, Color.black));
+            PlaceNewPiece('f', 8, new Bisp(Board, Color.black));
+            PlaceNewPiece('g', 8, new Horse(Board, Color.black));
+            PlaceNewPiece('h', 8, new Tower(Board, Color.black));
+            PlaceNewPiece('a', 7, new Peasant(Board, Color.black));
+            PlaceNewPiece('b', 7, new Peasant(Board, Color.black));
+            PlaceNewPiece('c', 7, new Peasant(Board, Color.black));
+            PlaceNewPiece('d', 7, new Peasant(Board, Color.black));
+            PlaceNewPiece('e', 7, new Peasant(Board, Color.black));
+            PlaceNewPiece('f', 7, new Peasant(Board, Color.black));
+            PlaceNewPiece('g', 7, new Peasant(Board, Color.black));
+            PlaceNewPiece('h', 7, new Peasant(Board, Color.black));
         }
     }
 }
